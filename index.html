@@ -1,40 +1,138 @@
 <!doctype html>
-<html>
+<html lang="en">
+
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Membuat Slide dengan reveal.js</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/league.css" id="theme">
 
-		<!-- Theme used for syntax highlighted code -->
+		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
+
 	<body>
+
 		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+				<section>
+					<a href="https://revealjs.com">
+						<img src="https://static.slid.es/reveal/logo-v1/reveal-white-text.svg" alt="reveal.js logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+					</a>
+					<h3>Github Cheat Sheet Presentation</h3>
+					<p>
+						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> and <a href="https://github.com/hakimel/reveal.js/graphs/contributors">contributors</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Halo</h2>
+					<p>
+						disini akan dijelaskan cheat sheet github dengan menggunakan reveal.js
+					</p>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>SETUP</h2>
+						<p>Configuring user information used across all local repositories</p>
+
+						<br>
+						<a href="#/2/1" class="navigate-down">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1);" width="178" height="238" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section>
+						<h2>git config --global user.name “[firstname lastname]”</h2>
+						<p>set a name that is identifiable for credit when review version history</p>
+					</section>
+					<section>
+						<h2>git config --global user.email “[valid-email]”</h2>
+						<p>set an email address that will be associated with each history marker</p>
+						<br>
+						<a href="#/2">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1); transform: rotate(180deg);" width="178" height="238" data-src="https://static.slid.es/reveal/arrow.png" alt="Up arrow">
+						</a>
+					</section>
+				</section>
+
+				<section data-visibility="hidden">
+					<h2>Hidden Slides</h2>
+					<p>
+						This slide is visible in the source, but hidden when the presentation is viewed. You can show all hidden slides by setting the `showHiddenSlides` config option to `true`.
+					</p>
+				</section>
+
+				<section data-auto-animate>
+					<h2 data-id="code-title">GITHUB CHEAT SHEET</h2>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="|4,8-11|17|22-24"><script type="text/template">
+						STAGE & SNAPSHOT
+
+						git status
+						show modified files in working directory, staged 
+						for your next commit
+
+						git add [file]
+						add a file as it looks now to your next commit (stage)
+						
+						git reset [file]
+						unstage a file while retaining the changes in 
+						working directory
+
+						git diff
+						diff of what is changed but not staged
+
+						git diff --staged
+						diff of what is staged but not yet commited
+						
+						git commit -m “[descriptive message]"
+						commit your staged content as a new commit snapshot
+					</script></code></pre>
+				</section>
+
+				<section>
+				 
+					<section data-background="https://cdn-image.hipwee.com/wp-content/uploads/2014/10/82961-thank-you-gif-Emma-Stone-YmA7.gif" style="height: auto; width: auto;">
+						<h2>... THE END</h2>
+					</section>
+				</section>
 		</div>
 
 		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
 		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
 		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
 			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
 				hash: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
 			});
+
 		</script>
+
 	</body>
 </html>
